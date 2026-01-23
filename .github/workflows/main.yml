@@ -30,4 +30,14 @@ jobs:
           name: app-files
           path: /home/runner/work/Demoappaz204/Demoappaz204/Demoappaz204/bin/Release/net8.0/publish/
 
+      - name: Login to Azure
+        uses: Azure/login@v2.3.0
+        with:
+          creds: ${{secrets.AZURE_CREDENTIALS}}
+
+      - name: Deploy to Azure web app
+        uses: Azure/webapps-deploy@v3.0.5
+        with:
+          app-name: mynewwebapp2307
+          package: /home/runner/work/Demoappaz204/Demoappaz204/Demoappaz204/bin/Release/net8.0/publish/
         
