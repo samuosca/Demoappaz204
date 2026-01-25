@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <PackageId>Demoappaz204</PackageId>
     <IsPackable>true</IsPackable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
