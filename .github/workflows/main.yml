@@ -35,7 +35,7 @@ jobs:
 
       # 5️⃣ Pack (create NuGet package)
       - name: Pack NuGet package
-        run: dotnet pack --output ./nupkg
+        run: dotnet pack --output ./nupkg1
 
       - name: Add GitHub Packages as NuGet source 
         run: | 
@@ -47,4 +47,4 @@ jobs:
 
       # 6️⃣ Publish package to GitHub Packages
       - name: Publish to GitHub Packages
-        run: dotnet nuget push "./nupkg/*.nupkg" --source github
+        run: dotnet nuget push "./nupkg1/*.nupkg" --source github
