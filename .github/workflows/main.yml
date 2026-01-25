@@ -1,8 +1,8 @@
 name: Starter Pipeline #Worflow name
 
-on: push #trigger
-
-workflow_dispatch:
+on: 
+- push #trigger
+- workflow_dispatch #manual
 
 jobs: 
   test:
