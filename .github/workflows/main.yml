@@ -1,9 +1,9 @@
-name: Starter Pipeline #Worflow name
+name: Starter Pipeline
 
-on: push #trigger
+on: push
 
 jobs: 
   test:
-    runs-on: ubuntu-latest #runner
+    runs-on: ubuntu-latest
     steps:
       - run: echo "Hello World!" 
