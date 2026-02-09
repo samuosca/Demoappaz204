@@ -3,17 +3,25 @@ name: Demo Pipeline
 on: push
 
 jobs: 
-  test:
+  build:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Run a one-line script
-        run: echo "Hello World!"
-        
-      - name: List all files in the current directoy
-        run: ls -la
-        
       - name: Checkout code
         uses: actions/checkout@v6.0.2
-        
-      - name: List all files in the reposiroty
-        run: ls -la
+ 
+      - name: setup SDK Azhar
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.x'
+ 
+      - name: Restore dependencies
+        run: dotnet restore
+ 
+      - name: Build
+        run: dotnet build
+ 
+      - name: Pack
+        run: dotnet pack --output ./nupkg
+
+
