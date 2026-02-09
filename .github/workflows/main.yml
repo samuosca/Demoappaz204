@@ -24,4 +24,6 @@ jobs:
       - name: Pack
         run: dotnet pack --output ./nupkg
 
+      - name: Publish to Github Packages
+        run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/samuosca/index.json"
 
