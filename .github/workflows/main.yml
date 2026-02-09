@@ -6,6 +6,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World!"
-      - run: ls -la
-      - run: pwd
+      - name: Run a one-line script
+        run: echo "Hello World!"
+        
+      - name: List all files in the current directoy
+        run: ls -la
+        
+      - name: Checkout code
+        uses: actions/checkout@v6.0.2
+        
+      - name: List all files in the reposiroty
+        run: ls -la
